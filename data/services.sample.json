@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Classic Haircut",
+    "category": "Haircuts",
+    "price": 40,
+    "priceNote": "",
+    "durationMinutes": 45,
+    "description": "Clipper and scissor work tailored to your head shape, finished with a clean neckline and styled.",
+    "squareWidgetName": "",
+    "bookingUrl": "",
+    "embedCode": "",
+    "verified": false,
+    "notes": "SAMPLE placeholder. The site uses data/services.json when it exists."
+  },
+  {
+    "name": "Skin Fade",
+    "category": "Haircuts",
+    "price": 45,
+    "priceNote": "",
+    "durationMinutes": 45,
+    "description": "Seamless fade down to the skin, blended by hand and finished with a sharp line-up.",
+    "squareWidgetName": "",
+    "bookingUrl": "",
+    "embedCode": "",
+    "verified": false,
+    "notes": "SAMPLE placeholder."
+  },
+  {
+    "name": "Scissor Cut",
+    "category": "Haircuts",
+    "price": 50,
+    "priceNote": "",
+    "durationMinutes": 60,
+    "description": "A longer, all-scissor cut for length and texture, shaped to grow out well.",
+    "squareWidgetName": "",
+    "bookingUrl": "",
+    "embedCode": "",
+    "verified": false,
+    "notes": "SAMPLE placeholder."
+  },
+  {
+    "name": "Kids Cut",
+    "category": "Haircuts",
+    "price": 30,
+    "priceNote": "12 & under",
+    "durationMinutes": 30,
+    "description": "A clean, comfortable cut for younger clients.",
+    "squareWidgetName": "",
+    "bookingUrl": "",
+    "embedCode": "",
+    "verified": false,
+    "notes": "SAMPLE placeholder."
+  },
+  {
+    "name": "Beard Trim & Shape-Up",
+    "category": "Beard & Shape-Ups",
+    "price": 25,
+    "priceNote": "",
+    "durationMinutes": 30,
+    "description": "Beard trimmed to length, cheek and neck lines defined, edges cleaned up.",
+    "squareWidgetName": "",
+    "bookingUrl": "",
+    "embedCode": "",
+    "verified": false,
+    "notes": "SAMPLE placeholder."
+  },
+  {
+    "name": "Line-Up",
+    "category": "Beard & Shape-Ups",
+    "price": 20,
+    "priceNote": "",
+    "durationMinutes": 15,
+    "description": "Hairline and edges sharpened between cuts.",
+    "squareWidgetName": "",
+    "bookingUrl": "",
+    "embedCode": "",
+    "verified": false,
+    "notes": "SAMPLE placeholder."
+  },
+  {
+    "name": "Haircut & Beard",
+    "category": "Packages",
+    "price": 60,
+    "priceNote": "+",
+    "durationMinutes": 75,
+    "description": "The full service: any haircut plus a beard trim and shape-up in one visit.",
+    "squareWidgetName": "",
+    "bookingUrl": "",
+    "embedCode": "",
+    "verified": false,
+    "notes": "SAMPLE placeholder."
+  }
+]
