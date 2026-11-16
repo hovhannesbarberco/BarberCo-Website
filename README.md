@@ -45,21 +45,10 @@ Keep prices in sync with Square: Square is what customers actually book and pay.
 
 ## Typography
 
-- **Cinzel** (display: headings, prices, the menu) is classic Roman inscriptional capitals, matching the lettering on the badge.
-- **Jost** (body, buttons, labels) is a clean geometric sans in the Futura tradition, the type you see on vintage barbershop signage.
-- Both load from Google Fonts with `display=swap`.
-- To try another pairing, change `--font-display` and `--font-sans` in `styles.css` and the Google Fonts `<link>` in each page's `<head>`.
-
-## Font Lab (dev only, remove before launch)
-
-On `localhost` / `127.0.0.1` there's a floating **Font Lab** button (bottom-left) for trying font pairings live. `fonts.html` shows every pairing side by side.
-
-- **Making a choice:** pick a pairing in the panel; the choice is saved in localStorage and carries across pages.
-- **Production:** on any other hostname the loader exits and `font-lab.js` is never downloaded.
-- **Making it permanent:**
-  1. Copy the pairing's `vars` from `assets/js/font-lab.js` into `:root` in `assets/css/styles.css`.
-  2. Put its font URL(s) in each page's `<head>`. Fontshare serves one family per CSS URL, so use one link per family.
-  3. Delete `assets/js/font-lab.js`, `fonts.html`, and the "Font Lab" loader `<script>` in the `<head>` of `index.html` and `services.html`.
+- **Oswald** (display, weights 500–600) is a condensed grotesk, set in uppercase for headings, service names, prices and the hero wordmark. It gives the bold barbershop-signage look.
+- **Inter** (body, buttons, labels, weights 300–600) is a crisp, highly readable sans.
+- Both load from Google Fonts (SIL Open Font License) with `display=swap`, in a single `<link>` in each page's `<head>`.
+- The families are set in `--font-display` and `--font-sans` at the top of `styles.css`.
 
 ## Before launch: search for `TODO`
 

@@ -24,11 +24,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..700&amp;family=Jost:wght@300..600&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..600&amp;family=Oswald:wght@500..600&amp;display=swap">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>document.documentElement.classList.add("js");</script>
-  <!-- DEV ONLY: Font Lab. Runs only on localhost/127.0.0.1. Remove this script, assets/js/font-lab.js and fonts.html before launch. -->
-  <script>(function(){var h=location.hostname;if(h!=="localhost"&&h!=="127.0.0.1")return;try{var f=localStorage.getItem("hbc-font-lab");if(f)document.documentElement.setAttribute("data-font",f);}catch(e){}var s=document.createElement("script");s.src="assets/js/font-lab.js";document.head.appendChild(s);})();</script>
 
   <!-- TODO: fill the remaining "TODO" values (domain, hours, price range, socials) before launch. -->
   <script type="application/ld+json">
@@ -109,14 +107,15 @@
     <!-- ============ HERO ============ -->
     <section class="hero rays tex on-dark" aria-labelledby="hero-title">
       <div class="container hero__content">
-        <img class="hero__badge"
-             src="assets/img/badge-480.webp"
-             srcset="assets/img/badge-320.webp 320w, assets/img/badge-480.webp 480w, assets/img/badge-800.webp 800w, assets/img/badge-1200.webp 1200w"
-             sizes="(min-width: 768px) 400px, 240px"
-             width="400" height="400" fetchpriority="high"
-             alt="Hovhannes Barber &amp; Co, established 2018">
-        <h1 class="hero__title" id="hero-title">Classic Barbering in North&nbsp;Hollywood</h1>
-        <p class="hero__sub">Precision cuts, clean fades and sharp beard work. Book your chair online.</p>
+        <img class="hero__mark"
+             src="assets/img/monogram-120.webp"
+             srcset="assets/img/monogram-120.webp 1x, assets/img/monogram-240.webp 2x, assets/img/monogram-360.webp 3x"
+             width="120" height="120" fetchpriority="high" alt="">
+        <h1 class="wordmark" id="hero-title">
+          <span class="wordmark__name">Hovhannes</span>
+          <span class="wordmark__sub"><span>Barber &amp; Co</span></span>
+        </h1>
+        <p class="hero__sub">Classic barbering in North Hollywood. Precision cuts, clean fades and sharp beard work.</p>
         <div class="hero__actions">
           <a class="btn btn--gold" href="services.html#menu" data-book>
             Book an appointment

@@ -6,11 +6,13 @@ The **main logo** is the full round badge. Its square cream corners are removed:
 
 | File | Use |
 |---|---|
-| `badge-160.webp`, `badge-320.webp` | Header logo (72px, retina) and footer (136px) |
-| `badge-320.webp`, `badge-480.webp`, `badge-800.webp`, `badge-1200.webp` | Hero centerpiece (400px desktop / 240px mobile, retina), CTA watermark, photo-slot watermark |
+| `badge-160.webp`, `badge-320.webp` | Header logo (72px, retina), footer (136px), About section, photo-slot watermark |
+| `badge-480.webp`, `badge-800.webp` | CTA watermark |
+| `badge-1200.webp` | High-resolution spare (not referenced by the pages) |
 | `badge-320.png`, `badge-800.png` | PNG copies for email, social, or the JSON-LD `logo` once the domain is live |
+| `monogram-120/240/360.webp` (+ `.png`) | The small "H" medallion in the home hero, at 1x/2x/3x. It's cut from the center of Logo D1 and is transparent outside the gold ring |
 | `og-image.jpg` | 1200×630 social share image: the badge on brand green |
-| `favicon-32.png`, `apple-touch-icon.png`, `../../favicon.ico` | Browser and home-screen icons. These are the only places the "H" monogram is used |
+| `favicon-32.png`, `apple-touch-icon.png`, `../../favicon.ico` | Browser and home-screen icons, made from the monogram |
 
 ## Photo slots (TODO: real photos needed)
 

@@ -31,23 +31,11 @@
   --line-gold: rgba(184, 149, 90, 0.3);
   --line-dark: rgba(43, 26, 18, 0.13);
 
-  /* ---- Type tokens (swap fonts here) ---- */
-  --font-display: "Cinzel", "Trajan Pro", "Times New Roman", serif;
-  --font-sans: "Jost", "Futura", "Century Gothic", "Avenir Next", system-ui, sans-serif;
-
-  /* Display tuning knobs (defaults = Cinzel). The dev Font Lab overrides these per pairing. */
-  --display-weight: 500;           /* section headings, hero title */
-  --display-weight-strong: 600;    /* card names, pillar/step titles */
-  --display-case: none;            /* none | uppercase */
-  --display-tracking: 0.03em;
-  --display-tracking-wide: 0.07em; /* hero title, statement band */
-  --display-leading: 1.18;
-  --display-scale: 1;              /* multiplies heading sizes */
-  --display-stretch: normal;       /* for width-axis fonts */
-  --name-case: none;               /* service names, small display text */
-  --name-tracking: 0.035em;
-  --name-scale: 1;
-  --price-weight: 600;
+  /* ---- Type tokens ----
+     Display: Oswald (condensed grotesk), uppercase, 600 for headings / 500 for prices.
+     Body/UI: Inter. */
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --fs-12: 0.75rem;
   --fs-14: 0.875rem;
@@ -55,9 +43,9 @@
   --fs-18: 1.125rem;
   --fs-20: 1.25rem;
   --fs-24: 1.5rem;
-  --fs-h3: clamp(1.2rem, 1.5vw, 1.375rem);
-  --fs-h2: clamp(1.75rem, 3.4vw, 2.75rem);
-  --fs-h1: clamp(2.1rem, 5vw, 3.75rem);
+  --fs-h3: clamp(1.32rem, 1.65vw, 1.5rem);
+  --fs-h2: clamp(2.15rem, 4.2vw, 3.4rem);
+  --fs-h1: clamp(2.6rem, 6.2vw, 4.65rem);
 
   /* ---- Spacing (8px rhythm) ---- */
   --sp-1: 0.5rem;
@@ -120,11 +108,10 @@ p:last-child { margin-bottom: 0; }
 h1, h2, h3, h4 {
   margin: 0;
   font-family: var(--font-display);
-  font-weight: var(--display-weight);
-  font-stretch: var(--display-stretch);
-  line-height: var(--display-leading);
-  letter-spacing: var(--display-tracking);
-  text-transform: var(--display-case);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
   text-wrap: balance;
 }
 ul, ol { margin: 0; padding: 0; list-style: none; }
@@ -228,9 +215,9 @@ button { font: inherit; }
 }
 .theme-green .eyebrow, .theme-deep .eyebrow, .on-dark .eyebrow { color: var(--gold-200); }
 
-.h1 { font-size: calc(var(--fs-h1) * var(--display-scale)); }
-.h2 { font-size: calc(var(--fs-h2) * var(--display-scale)); }
-.h3 { font-size: calc(var(--fs-h3) * var(--display-scale)); }
+.h1 { font-size: var(--fs-h1); }
+.h2 { font-size: var(--fs-h2); }
+.h3 { font-size: var(--fs-h3); }
 
 /* Accent words: color only, no decorative italics */
 .h1 em, .h2 em, .h3 em, .accent {
@@ -465,11 +452,10 @@ button { font: inherit; }
   align-items: center;
   min-height: 56px;
   font-family: var(--font-display);
-  font-size: calc(clamp(1.6rem, 7vw, 2.1rem) * var(--display-scale));
-  font-weight: var(--display-weight);
-  font-stretch: var(--display-stretch);
-  letter-spacing: var(--display-tracking);
-  text-transform: var(--display-case);
+  font-size: clamp(2rem, 8.7vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
   text-decoration: none;
 }
 .mobile-nav ul a:hover { color: var(--gold-200); }
@@ -491,34 +477,57 @@ button { font: inherit; }
   text-align: center;
   color: var(--cream);
   background:
-    radial-gradient(ellipse 60% 55% at 50% 34%, rgba(78, 115, 91, 0.55) 0%, rgba(78, 115, 91, 0) 70%),
-    radial-gradient(ellipse 120% 90% at 50% 36%, var(--green) 0%, var(--green-800) 55%, var(--green-950) 100%);
-  --rays-y: 34%;
+    radial-gradient(ellipse 70% 60% at 50% 42%, rgba(70, 104, 82, 0.55) 0%, rgba(70, 104, 82, 0) 70%),
+    radial-gradient(ellipse 120% 90% at 50% 40%, var(--green) 0%, var(--green-800) 55%, var(--green-950) 100%);
+  --rays-y: 40%;
 }
-@media (min-width: 768px) { .hero { --rays-y: 38%; } }
 
 .hero__content { position: relative; display: flex; flex-direction: column; align-items: center; }
 
-.hero__badge {
-  width: clamp(240px, 29vw, 400px);
+.hero__mark {
+  width: clamp(96px, 9vw, 120px);
   height: auto;
   aspect-ratio: 1;
-  filter: drop-shadow(0 28px 50px rgba(0, 0, 0, 0.42));
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.38));
 }
 
-.hero__title {
-  margin-top: clamp(var(--sp-4), 4vw, 2.75rem);
-  max-width: 22ch;
-  font-size: calc(clamp(1.5rem, 3vw, 2.35rem) * var(--display-scale));
-  letter-spacing: var(--display-tracking-wide);
-  line-height: calc(var(--display-leading) + 0.05);
+/* Brand lockup (the page's h1): HOVHANNES / -- BARBER & CO -- */
+.wordmark { display: flex; flex-direction: column; align-items: center; }
+.wordmark__name {
+  display: block;
+  font-size: clamp(3rem, 14vw, 7.5rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: 0.16em;
+  margin-right: -0.16em; /* optical centering of tracked caps */
 }
-@media (min-width: 1024px) { .hero__title { max-width: none; } }
+.wordmark__sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.9rem, 2vw, 1.5rem);
+  width: 100%;
+  margin-top: clamp(0.9rem, 1.6vw, 1.35rem);
+  font-size: clamp(1rem, 2vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.5em;
+  color: var(--gold);
+}
+.wordmark__sub span { margin-right: -0.5em; }
+.wordmark__sub::before, .wordmark__sub::after {
+  content: "";
+  flex: 0 1 clamp(2.5rem, 11vw, 9rem);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.wordmark__sub::after { background: linear-gradient(90deg, var(--gold), transparent); }
 
 .hero__sub {
   text-wrap: balance;
-  margin: var(--sp-2) auto 0;
-  max-width: 32rem;
+  margin: clamp(1.5rem, 3vw, 2.1rem) auto 0;
+  max-width: 34rem;
   padding-inline: var(--sp-1);
   font-size: var(--fs-18);
   font-weight: 300;
@@ -711,9 +720,8 @@ button { font: inherit; }
 .fact__value {
   display: block;
   font-family: var(--font-display);
-  font-size: calc(2.25rem * var(--display-scale));
-  font-weight: var(--display-weight);
-  font-stretch: var(--display-stretch);
+  font-size: 2.8rem;
+  font-weight: 600;
   line-height: 1;
   color: var(--green);
   font-variant-numeric: lining-nums tabular-nums;
@@ -758,11 +766,10 @@ button { font: inherit; }
 .menu-item__top { display: flex; align-items: baseline; gap: var(--sp-2); }
 .menu-item__name {
   font-family: var(--font-display);
-  font-size: calc(var(--fs-20) * var(--name-scale));
-  font-weight: var(--display-weight);
-  font-stretch: var(--display-stretch);
-  letter-spacing: var(--name-tracking);
-  text-transform: var(--name-case);
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   line-height: 1.3;
 }
 .menu-item__leader {
@@ -773,9 +780,8 @@ button { font: inherit; }
 }
 .menu-item__price {
   font-family: var(--font-display);
-  font-size: calc(var(--fs-20) * var(--name-scale));
-  font-weight: var(--price-weight);
-  font-stretch: var(--display-stretch);
+  font-size: 1.375rem;
+  font-weight: 500;
   line-height: 1;
   color: var(--gold-200);
   white-space: nowrap;
@@ -852,12 +858,11 @@ button { font: inherit; }
   max-width: 20ch;
   margin: 0 auto;
   font-family: var(--font-display);
-  font-size: calc(clamp(1.75rem, 4.2vw, 3.25rem) * var(--display-scale));
-  font-weight: var(--display-weight);
-  font-stretch: var(--display-stretch);
-  letter-spacing: var(--display-tracking-wide);
-  text-transform: var(--display-case);
-  line-height: calc(var(--display-leading) + 0.1);
+  font-size: clamp(2.15rem, 5.2vw, 4rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.16;
   text-wrap: balance;
 }
 .band__quote span { color: var(--gold-200); }
@@ -880,16 +885,15 @@ button { font: inherit; }
 .pillar__num {
   display: block;
   font-family: var(--font-display);
-  font-size: calc(2.25rem * var(--display-scale));
-  font-weight: var(--display-weight);
-  font-stretch: var(--display-stretch);
+  font-size: 2.8rem;
+  font-weight: 600;
   line-height: 1;
   color: var(--gold);
 }
 .pillar h3 {
   margin: var(--sp-3) 0 0.75rem;
-  font-size: calc(var(--fs-h3) * var(--name-scale));
-  font-weight: var(--display-weight-strong);
+  font-size: var(--fs-h3);
+  font-weight: 600;
   color: var(--green);
 }
 .pillar p { color: var(--brown-700); }
@@ -1059,7 +1063,7 @@ button { font: inherit; }
   padding-bottom: 1.25rem;
   border-bottom: 1px solid rgba(43, 26, 18, 0.28);
 }
-.menu-cat__head h2 { font-size: calc(clamp(1.6rem, 3vw, 2.25rem) * var(--display-scale)); color: var(--green); }
+.menu-cat__head h2 { font-size: clamp(2rem, 3.7vw, 2.8rem); color: var(--green); }
 .menu-cat__count {
   font: 500 var(--fs-12)/1 var(--font-sans);
   letter-spacing: 0.22em;
@@ -1104,11 +1108,10 @@ button { font: inherit; }
 .card__top { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--sp-2); }
 .card__name {
   font-family: var(--font-display);
-  font-size: calc(var(--fs-20) * var(--name-scale));
-  font-weight: var(--display-weight-strong);
-  font-stretch: var(--display-stretch);
-  letter-spacing: var(--name-tracking);
-  text-transform: var(--name-case);
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   line-height: 1.3;
   color: var(--green);
 }
@@ -1116,9 +1119,8 @@ button { font: inherit; }
   flex: none;
   text-align: right;
   font-family: var(--font-display);
-  font-size: calc(var(--fs-24) * var(--name-scale));
-  font-weight: var(--price-weight);
-  font-stretch: var(--display-stretch);
+  font-size: 1.65rem;
+  font-weight: 500;
   line-height: 1.1;
   color: var(--brown);
   font-variant-numeric: lining-nums tabular-nums;
@@ -1182,13 +1184,12 @@ button { font: inherit; }
 .step__num {
   display: block;
   font-family: var(--font-display);
-  font-weight: var(--display-weight);
-  font-stretch: var(--display-stretch);
-  font-size: calc(2.25rem * var(--display-scale));
+  font-weight: 600;
+  font-size: 2.8rem;
   line-height: 1;
   color: var(--gold);
 }
-.step h3 { margin: var(--sp-3) 0 0.75rem; font-size: calc(var(--fs-h3) * var(--name-scale)); font-weight: var(--display-weight-strong); }
+.step h3 { margin: var(--sp-3) 0 0.75rem; font-size: var(--fs-h3); font-weight: 600; }
 .step p { color: var(--on-green-muted); }
 
 .policy {
@@ -1199,7 +1200,7 @@ button { font: inherit; }
   background: var(--cream-50);
 }
 @media (min-width: 768px) { .policy { grid-template-columns: 1fr 2fr; align-items: start; } }
-.policy h2 { font-size: calc(clamp(1.5rem, 2.6vw, 2rem) * var(--display-scale)); color: var(--green); }
+.policy h2 { font-size: clamp(1.85rem, 3.2vw, 2.5rem); color: var(--green); }
 
 /* ---------- Footer ---------- */
 
