@@ -39,6 +39,7 @@
           duration: Number(s.durationMinutes) || 0,
           description: typeof s.description === "string" ? s.description.trim() : "",
           bookingUrl: isHttpUrl(s.bookingUrl) ? s.bookingUrl.trim() : "",
+          image: isImageBase(s.image) ? s.image.trim() : "",
           featured: s.featured === true
         };
       });
@@ -149,6 +150,38 @@
     return a;
   }
 
+  /* ---------- Service illustrations ---------- */
+
+  // "image" in services.json is a relative base path without size/extension,
+  // e.g. "assets/img/services/fade-taper-haircut" -> -480.webp / -960.webp.
+  function isImageBase(v) {
+    return typeof v === "string" && /^[a-z0-9][a-z0-9/_-]*$/i.test(v.trim()) && v.indexOf("..") === -1;
+  }
+
+  // Returns a wrapper with a responsive <img>, or null when the service has no image.
+  // If the file fails to load, the wrapper removes itself and the host falls back to
+  // its text-only layout (the "has-media" class is dropped).
+  function serviceMedia(s, cls, sizes, host) {
+    if (!s.image) return null;
+    var wrap = el("div", cls);
+    var img = document.createElement("img");
+    img.src = s.image + "-480.webp";
+    img.srcset = s.image + "-480.webp 480w, " + s.image + "-960.webp 960w";
+    img.sizes = sizes;
+    img.width = 480;
+    img.height = 480;
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.alt = s.name + " illustration";
+    img.addEventListener("error", function () {
+      host.classList.remove("has-media");
+      if (wrap.parentNode) wrap.parentNode.removeChild(wrap);
+    });
+    wrap.appendChild(img);
+    host.classList.add("has-media");
+    return wrap;
+  }
+
   /* ---------- Home: menu preview ---------- */
 
   function renderFeatured(list) {
@@ -162,6 +195,9 @@
       var li = el("li", "menu-item");
       li.setAttribute("data-reveal", "");
       li.style.setProperty("--d", (i % 2) * 0.08 + "s");
+
+      var thumb = serviceMedia(s, "menu-item__media", "(min-width: 768px) 64px, 52px", li);
+      if (thumb) li.appendChild(thumb);
 
       var top = el("div", "menu-item__top");
       top.appendChild(el("h3", "menu-item__name", s.name));
@@ -191,6 +227,11 @@
     var card = el("article", "card");
     card.setAttribute("data-reveal", "");
     card.style.setProperty("--d", (i % 3) * 0.08 + "s");
+
+    // Desktop/tablet: medallion panel across the top of the card.
+    // Mobile: round thumbnail beside the name, price and duration.
+    var media = serviceMedia(s, "card__media", "(min-width: 1200px) 240px, (min-width: 768px) 30vw, 96px", card);
+    if (media) card.appendChild(media);
 
     var top = el("div", "card__top");
     top.appendChild(el("h3", "card__name", s.name));
