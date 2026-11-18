@@ -66,13 +66,24 @@
      section without adding "#..." to the address bar. */
   document.addEventListener("click", function (e) {
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+    /* "Book now" from another page goes to /services: ask that page to open
+       at the menu (services.js reads this), keeping the URL clean. */
+    if (e.target.closest('a[data-book][href="/services"]')) {
+      try { sessionStorage.setItem("hbc:show-menu", "1"); } catch (err) { /* storage blocked: page opens at the top */ }
+      return;
+    }
+
     var a = e.target.closest('a[href^="#"]');
     if (!a) return;
     var id = a.getAttribute("href").slice(1);
     var target = id && document.getElementById(id);
     if (!target) return;
     e.preventDefault();
-    target.scrollIntoView();
+    /* "#menu" means the start of the services list: land on the first category
+       (Haircuts), just below the sticky category bar. */
+    var scrollTarget = (id === "menu" && target.querySelector(".menu-cat[id]")) || target;
+    scrollTarget.scrollIntoView();
     if (!target.matches("a[href], button, input, select, textarea, [tabindex]")) {
       target.setAttribute("tabindex", "-1");
     }

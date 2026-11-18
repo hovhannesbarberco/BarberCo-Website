@@ -12,6 +12,26 @@
   var catNavEl = document.getElementById("cat-nav-list");
   if (!featuredEl && !menuEl) return;
 
+  /* Arrived from a "Book now" button (main.js sets the flag): open at the menu.
+     Jump once now, then again after the menu and category bar are drawn. */
+  var showMenu = false;
+  if (menuEl) {
+    try {
+      showMenu = sessionStorage.getItem("hbc:show-menu") === "1";
+      sessionStorage.removeItem("hbc:show-menu");
+    } catch (err) { /* storage blocked */ }
+  }
+  function jumpToMenu() {
+    if (!showMenu) return;
+    var first = menuEl.querySelector(".menu-cat[id]") || menuEl;
+    var html = document.documentElement;
+    html.style.scrollBehavior = "auto";
+    first.scrollIntoView();
+    html.style.scrollBehavior = "";
+    menuEl.focus({ preventScroll: true });
+  }
+  jumpToMenu();
+
   /* ---------- Data ---------- */
 
   function fetchJson(url) {
@@ -336,9 +356,11 @@
       if (!list.length) throw new Error("No services");
       if (featuredEl) renderFeatured(list);
       if (menuEl) renderMenu(list);
+      if (menuEl) jumpToMenu();
     })
     .catch(function () {
       if (featuredEl) renderError(featuredEl);
       if (menuEl) renderError(menuEl);
+      if (menuEl) jumpToMenu();
     });
 })();

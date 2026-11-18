@@ -1077,7 +1077,9 @@ button { font: inherit; }
 
 .menu-cat {
   padding-top: clamp(3.5rem, 6vw, 5rem);
-  scroll-margin-top: calc(var(--header-h) + 72px);
+  /* html's scroll-padding already clears the header (+1rem); this adds the
+     sticky category bar (~69px tall), so a jump lands just below it. */
+  scroll-margin-top: 3.25rem;
 }
 .menu-cat__head {
   display: flex;
