@@ -50,17 +50,10 @@ Keep prices in sync with Square: Square is what customers actually book and pay.
 - Both load from Google Fonts (SIL Open Font License) with `display=swap`, in a single `<link>` in each page's `<head>`.
 - The families are set in `--font-display` and `--font-sans` at the top of `styles.css`.
 
-## Before launch: search for `TODO`
+## Still to add
 
-Every missing piece of real content is marked `TODO` in the HTML (visible TODO text has a dashed outline). Still to fill:
+- **Photos.** The About portrait and the wide band show branded green panels until photos arrive (see `assets/img/photos/README.md`). The Gallery section is hidden (`hidden` on `#gallery` in `index.html`); the comment above it says how to bring it back.
+- **Social links.** None are shown yet. Add them to the footers (and `sameAs` in the JSON-LD) once he has profiles to link.
+- **General booking link.** `BOOKING_URL` in `assets/js/config.js`.
 
-- email
-- hours
-- social links
-- the bio
-- the booking policy and payment methods
-- photos
-- the live domain (canonical, `og:url` and the absolute `og:image`)
-- the remaining fields in the BarberShop JSON-LD block in `index.html`: url, logo, image, price range, opening hours and sameAs
-
-The address (5245 Vineland Ave, North Hollywood, CA 91601) and phone ((818) 397-7285) are already filled in.
+The site has no email address on purpose. Address, phone, hours, bio, the domain (`hovhannesbarberco.com`) and the JSON-LD are filled in. When he moves to his own shop, update the address and the "opening soon" note in the Visit section.

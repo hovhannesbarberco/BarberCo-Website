@@ -975,6 +975,7 @@ button { font: inherit; }
   color: var(--brown-700);
 }
 
+.visit-note { max-width: 34rem; margin-top: var(--sp-3); }
 .info-list { display: grid; gap: var(--sp-4); margin-top: var(--sp-4); }
 @media (min-width: 768px) {
   .info-list { grid-template-columns: 1fr 1fr; column-gap: var(--sp-6); }
