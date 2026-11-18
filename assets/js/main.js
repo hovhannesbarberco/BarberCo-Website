@@ -62,6 +62,23 @@
     });
   }
 
+  /* Same-page links (#menu, #about, category chips, skip link): scroll to the
+     section without adding "#..." to the address bar. */
+  document.addEventListener("click", function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = a.getAttribute("href").slice(1);
+    var target = id && document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView();
+    if (!target.matches("a[href], button, input, select, textarea, [tabindex]")) {
+      target.setAttribute("tabindex", "-1");
+    }
+    target.focus({ preventScroll: true });
+  });
+
   /* Footer year */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = String(new Date().getFullYear());

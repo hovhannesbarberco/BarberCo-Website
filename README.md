@@ -6,15 +6,19 @@ A static site: plain HTML, CSS and JavaScript, with no build step. Upload the fo
 
 ## Preview locally
 
-The service menu is loaded with `fetch()`, so open the site through a local web server, not by double-clicking the file:
+The service menu is loaded with `fetch()`, so open the site through a local web server, not by double-clicking the file. Links use clean URLs (`/services`, not `services.html`), which GitHub Pages supports, so use a server that does too:
 
 ```bash
 # from this folder
-python -m http.server 8000
-# then open http://localhost:8000
+npx serve .
+# then open the address it prints (usually http://localhost:3000)
 ```
 
-(`npx serve .` works too.)
+(`python -m http.server` won't work for this: it can't serve `/services`.)
+
+## Hosting
+
+GitHub Pages on the barber's own repo (`hovhannesbarberco/BarberCo-Website`), branch `main`, folder `/`. Pushing to `main` updates the live site within a minute or two. The `CNAME` file holds the custom domain: don't delete it. DNS is at Namecheap: four A records for `@` pointing to GitHub's addresses (185.199.108–111.153), and a CNAME `www` → `hovhannesbarberco.github.io`.
 
 ## Files
 

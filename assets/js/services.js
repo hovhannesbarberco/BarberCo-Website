@@ -325,7 +325,7 @@
     box.appendChild(el("p", "", "The service menu couldn't be loaded right now."));
     var a = el("a", "btn btn--green");
     a.textContent = "Book online";
-    a.href = isHttpUrl(C.BOOKING_URL) ? C.BOOKING_URL : "services.html";
+    a.href = isHttpUrl(C.BOOKING_URL) ? C.BOOKING_URL : "/services";
     box.appendChild(a);
     target.replaceChildren(box);
     target.removeAttribute("aria-busy");
