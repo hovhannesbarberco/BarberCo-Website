@@ -57,7 +57,7 @@ Keep prices in sync with Square: Square is what customers actually book and pay.
 ## Still to add
 
 - **Photos.** The About portrait and the wide band show branded green panels until photos arrive (see `assets/img/photos/README.md`). The Gallery section is hidden (`hidden` on `#gallery` in `index.html`); the comment above it says how to bring it back.
-- **Social links.** None are shown yet. Add them to the footers (and `sameAs` in the JSON-LD) once he has profiles to link.
+- **Social links.** Instagram ([@barber_colorist_la](https://www.instagram.com/barber_colorist_la/)) is in both footers, the Gallery button and `sameAs` in the JSON-LD. Add any other profiles the same way.
 - **General booking link.** `BOOKING_URL` in `assets/js/config.js`.
 
 The site has no email address on purpose. Address, phone, hours, bio, the domain (`hovhannesbarberco.com`) and the JSON-LD are filled in. When he moves to his own shop, update the address and the "opening soon" note in the Visit section.
