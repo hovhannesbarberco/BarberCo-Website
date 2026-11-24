@@ -9,6 +9,7 @@
     "image": "assets/img/services/mens-haircut",
     "squareWidgetName": "Men's Haircut",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/m858m6qowz93a9/LYPDVCS8S0YFS",
+    "squareVariationId": "OQYCVX2SAWC54EHROQY5NSTZ",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/m858m6qowz93a9/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -23,6 +24,7 @@
     "image": "assets/img/services/fade-taper-haircut",
     "squareWidgetName": "Fade / Taper Haircut",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/hl50tpmuqy0go5/LYPDVCS8S0YFS",
+    "squareVariationId": "CRBDLV335CJNQDYM2QEA6B6V",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/hl50tpmuqy0go5/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -37,6 +39,7 @@
     "image": "assets/img/services/buzz-cut",
     "squareWidgetName": "Buzz Cut",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/ko6f040n06uaqm/LYPDVCS8S0YFS",
+    "squareVariationId": "ACEULTG2UNE5QWV6EKBUEP2Y",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/ko6f040n06uaqm/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -52,6 +55,7 @@
     "image": "assets/img/services/mens-hair-color",
     "squareWidgetName": "Men's Hair Color",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/2xrr04gcznb9gc/LYPDVCS8S0YFS",
+    "squareVariationId": "K4SDZUNFBQROW5O2AX5DMFUD",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/2xrr04gcznb9gc/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": "Square: variable price with 'Contact to inquire' shown instead of a price; books a 1 hr block. The site shows 'Inquire' and 'Varies'."
@@ -66,6 +70,7 @@
     "image": "assets/img/services/hot-towel-head-shave",
     "squareWidgetName": "Hot Towel Head Shave",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/hapr68ztw2uswf/LYPDVCS8S0YFS",
+    "squareVariationId": "5HDE5YINLLOEAAUOG4RZ66TT",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/hapr68ztw2uswf/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -80,6 +85,7 @@
     "image": "assets/img/services/hot-towel-full-face-shave",
     "squareWidgetName": "Hot Towel Full Face Shave",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/hyu687ktt8i75v/LYPDVCS8S0YFS",
+    "squareVariationId": "UU6WRWY2AE6PEVIGIOA52FSG",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/hyu687ktt8i75v/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -94,6 +100,7 @@
     "image": "assets/img/services/beard-shaping-hot-towel",
     "squareWidgetName": "Beard Shaping with Hot Towel",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/adc7cn9c6gqicy/LYPDVCS8S0YFS",
+    "squareVariationId": "6R3KRRFLZUOR3AWBMP3AB54I",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/adc7cn9c6gqicy/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -108,6 +115,7 @@
     "image": "assets/img/services/razor-beard-line-up",
     "squareWidgetName": "Razor Beard Line-Up",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/j3w9zlrk2lnoat/LYPDVCS8S0YFS",
+    "squareVariationId": "42EVWT4ZPXRB5FP7MD3JGN3S",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/j3w9zlrk2lnoat/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -122,6 +130,7 @@
     "image": "assets/img/services/haircut-beard-line-up",
     "squareWidgetName": "Haircut + Beard Line-Up",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/u86eg744e1yqae/LYPDVCS8S0YFS",
+    "squareVariationId": "XGISKHEHKKZPUY4R2SNA4PV7",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/u86eg744e1yqae/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -136,6 +145,7 @@
     "image": "assets/img/services/haircut-hot-towel-shave",
     "squareWidgetName": "Haircut + Hot Towel Shave",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/pyo67syidfl2ev/LYPDVCS8S0YFS",
+    "squareVariationId": "2GPFYGVAE3M6PZPOMNNURXJP",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/pyo67syidfl2ev/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -150,6 +160,7 @@
     "image": "assets/img/services/buzz-cut-beard-shave-line-up",
     "squareWidgetName": "Buzz Cut + Beard Shave or Line-Up",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/gftw1oobx76gnj/LYPDVCS8S0YFS",
+    "squareVariationId": "3B7XIWKLQWKJSBAUXPCBANDU",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/gftw1oobx76gnj/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -164,6 +175,7 @@
     "image": "assets/img/services/head-shave-beard-line-up",
     "squareWidgetName": "Head Shave + Beard Line-Up",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/nor0nespttay27/LYPDVCS8S0YFS",
+    "squareVariationId": "G3N7UH3PMBZEIWAKPZOXM5JK",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/nor0nespttay27/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -178,6 +190,7 @@
     "image": "assets/img/services/haircut-eyebrow-wax",
     "squareWidgetName": "Haircut + Eyebrow Wax",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/w87knc69kjylrj/LYPDVCS8S0YFS",
+    "squareVariationId": "DYLH3SDQWAHJ242ZZTZEHEY3",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/w87knc69kjylrj/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -192,6 +205,7 @@
     "image": "assets/img/services/fade-eyebrow-ear-wax",
     "squareWidgetName": "Fade + Eyebrow & Ear Wax",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/vt9a19fu3jsrxv/LYPDVCS8S0YFS",
+    "squareVariationId": "7GBTFOH7CRQML4UT6BT4MVM5",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/vt9a19fu3jsrxv/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -206,6 +220,7 @@
     "image": "assets/img/services/haircut-beard-color",
     "squareWidgetName": "Haircut + Beard Color",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/nea6qobzvxuwe4/LYPDVCS8S0YFS",
+    "squareVariationId": "34Z2UH33LCPPRW6XHW4VAEF2",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/nea6qobzvxuwe4/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -220,6 +235,7 @@
     "image": "assets/img/services/full-package",
     "squareWidgetName": "Full Package",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/8q6zsbjad3m6ox/LYPDVCS8S0YFS",
+    "squareVariationId": "IA2OWO5S7UKNRHMDAFEOQ3FE",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/8q6zsbjad3m6ox/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -234,6 +250,7 @@
     "image": "assets/img/services/black-mask",
     "squareWidgetName": "Black Mask",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/lf7kmuw62dcxyx/LYPDVCS8S0YFS",
+    "squareVariationId": "RZYHJ5ASKI6B4P6OABF6LNB4",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/lf7kmuw62dcxyx/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": ""
@@ -248,6 +265,7 @@
     "image": "assets/img/services/waxing",
     "squareWidgetName": "Waxing (Ears, Nose or Eyebrows)",
     "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/lgm8oc32tnonhz/LYPDVCS8S0YFS",
+    "squareVariationId": "5FZBELSOTHVARE3PBXBWQ76Q",
     "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/lgm8oc32tnonhz/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
     "verified": true,
     "notes": "Starting price; Square is set to a fixed $15."

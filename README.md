@@ -36,14 +36,16 @@ GitHub Pages on the barber's own repo (`hovhannesbarberco/BarberCo-Website`), br
 
 ## How booking works
 
-- Each service card's **Book** button opens that service's `bookingUrl` (its Square Advanced Widget link) in a new tab.
+- Each service card's **Book** button opens that service's Square booking page in a new tab. The service is already in the cart and the page opens at the date and time step.
+- How that link is built: `bookingUrl` (the service's Square Advanced Widget link) plus `squareVariationId`, with `SQUARE_STAFF_TOKEN` from `assets/js/config.js`. The script turns them into a `book.squareup.com/.../services?rebooking=[...]` link. `rebooking` is the parameter Square's own booking page reads to pre-fill the cart. If `squareVariationId` is missing, the button opens the plain `bookingUrl`, where the customer picks the service and taps Add.
+- To find a service's `squareVariationId`, open `https://app.squareup.com/appointments/api/buyer/widget/<widget id>?unit_token=LYPDVCS8S0YFS` and copy `services[0].variations[0].id`. The team member token is `staff[0].employee_token` in the same response.
 - If a service has no `bookingUrl`, it falls back to `BOOKING_URL` in `assets/js/config.js`.
 - If neither is set, the button is shown but disabled.
 - General "Book now" buttons (in the header, hero and CTA) go to `BOOKING_URL` once it's set. Until then they go to the services page.
 
 ## Updating prices or services
 
-Edit `data/services.json`; the pages update automatically. Fields: `name`, `category` (cards are grouped by this, in the order they first appear), `price` (a number, or text such as `"45"` or `"Free"`), `priceNote` (`"+"` or `"and up"` shows as `$45+`; anything else shows under the price), `durationMinutes`, `durationText` (optional; shown instead of the minutes, e.g. `"Varies"`), `description`, `bookingUrl`. You can also set `"featured": true` to pin a service to the home page preview.
+Edit `data/services.json`; the pages update automatically. Fields: `name`, `category` (cards are grouped by this, in the order they first appear), `price` (a number, or text such as `"45"` or `"Free"`), `priceNote` (`"+"` or `"and up"` shows as `$45+`; anything else shows under the price), `durationMinutes`, `durationText` (optional; shown instead of the minutes, e.g. `"Varies"`), `description`, `bookingUrl`, `squareVariationId` (see "How booking works"). You can also set `"featured": true` to pin a service to the home page preview.
 
 Keep prices in sync with Square: Square is what customers actually book and pay.
 

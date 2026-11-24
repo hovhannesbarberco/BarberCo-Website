@@ -8,6 +8,11 @@ window.HBC_CONFIG = {
   // general Book buttons then go to the services page instead.
   BOOKING_URL: "",
 
+  // Hovhannes's Square team member token. Service Book buttons use it with each
+  // service's squareVariationId so Square opens with the service already in the cart
+  // and Hovhannes picked. Leave "" to let Square book any available barber.
+  SQUARE_STAFF_TOKEN: "TMljDILHGs-W5UIt",
+
   // Service data. The real file is written from Square; the sample is only a fallback.
   SERVICES_URL: "data/services.json",
   SERVICES_FALLBACK_URL: "data/services.sample.json",

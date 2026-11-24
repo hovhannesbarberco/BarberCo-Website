@@ -61,6 +61,8 @@
           durationText: typeof s.durationText === "string" ? s.durationText.trim() : "",
           description: typeof s.description === "string" ? s.description.trim() : "",
           bookingUrl: isHttpUrl(s.bookingUrl) ? s.bookingUrl.trim() : "",
+          squareVariationId: typeof s.squareVariationId === "string" && /^[A-Z0-9]+$/.test(s.squareVariationId.trim())
+            ? s.squareVariationId.trim() : "",
           image: isImageBase(s.image) ? s.image.trim() : "",
           featured: s.featured === true
         };
@@ -155,9 +157,24 @@
   function arrowIcon() { return icon(["M4 12h15", "M13 6l6 6-6 6"]); }
   function clockIcon() { return icon(["M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z", "M12 7.5V12l3 2"]); }
 
+  // Square's booking page reads ?rebooking=[{variation_token, employee_token}], puts that
+  // service in the cart and opens straight at the date & time step. Built from the
+  // service's Square widget link plus its squareVariationId. If Square rejects the
+  // values, its page just shows the service list as before.
+  var SQUARE_WIDGET = /^https:\/\/app\.squareup\.com\/appointments\/buyer\/widget\/([a-z0-9]+)\/([A-Z0-9]+)\/?$/;
+  function squareDirectUrl(s) {
+    var m = s.squareVariationId && SQUARE_WIDGET.exec(s.bookingUrl);
+    if (!m) return "";
+    var seg = { variation_token: s.squareVariationId };
+    var staff = typeof C.SQUARE_STAFF_TOKEN === "string" ? C.SQUARE_STAFF_TOKEN.trim() : "";
+    if (staff) seg.employee_token = staff;
+    return "https://book.squareup.com/appointments/" + m[1] + "/location/" + m[2] +
+      "/services?rebooking=" + encodeURIComponent(JSON.stringify([seg]));
+  }
+
   function bookLink(s, cls, label) {
     var a = el("a", cls);
-    var url = s.bookingUrl || (isHttpUrl(C.BOOKING_URL) ? C.BOOKING_URL.trim() : "");
+    var url = squareDirectUrl(s) || s.bookingUrl || (isHttpUrl(C.BOOKING_URL) ? C.BOOKING_URL.trim() : "");
     a.appendChild(document.createTextNode(label));
     a.appendChild(el("span", "sr-only", " " + s.name + (url ? " (opens in a new tab)" : "")));
     if (url) {
