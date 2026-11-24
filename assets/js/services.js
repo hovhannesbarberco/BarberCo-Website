@@ -57,6 +57,8 @@
           price: s.price,
           priceNote: typeof s.priceNote === "string" ? s.priceNote.trim() : "",
           duration: Number(s.durationMinutes) || 0,
+          // Optional text shown instead of the minutes, e.g. "Varies".
+          durationText: typeof s.durationText === "string" ? s.durationText.trim() : "",
           description: typeof s.description === "string" ? s.description.trim() : "",
           bookingUrl: isHttpUrl(s.bookingUrl) ? s.bookingUrl.trim() : "",
           image: isImageBase(s.image) ? s.image.trim() : "",
@@ -105,6 +107,10 @@
     var h = Math.floor(m / 60), r = m % 60;
     if (!h) return r + " min";
     return r ? h + " hr " + r + " min" : h + " hr";
+  }
+
+  function durationLabel(s) {
+    return s.durationText || formatDuration(s.duration);
   }
 
   function slugify(s) {
@@ -228,7 +234,7 @@
       li.appendChild(top);
 
       var meta = el("div", "menu-item__meta");
-      var info = [formatDuration(s.duration), parts.note].filter(Boolean).join(" · ");
+      var info = [durationLabel(s), parts.note].filter(Boolean).join(" · ");
       meta.appendChild(el("span", "menu-item__dur", info));
       meta.appendChild(bookLink(s, "menu-item__book", "Book"));
       li.appendChild(meta);
@@ -264,10 +270,11 @@
     rule.setAttribute("aria-hidden", "true");
     card.appendChild(rule);
 
-    if (s.duration) {
+    var dur = durationLabel(s);
+    if (dur) {
       var meta = el("p", "card__meta");
       meta.appendChild(clockIcon());
-      meta.appendChild(document.createTextNode(formatDuration(s.duration)));
+      meta.appendChild(document.createTextNode(dur));
       card.appendChild(meta);
     }
 

@@ -43,7 +43,7 @@ GitHub Pages on the barber's own repo (`hovhannesbarberco/BarberCo-Website`), br
 
 ## Updating prices or services
 
-Edit `data/services.json`; the pages update automatically. Fields: `name`, `category` (cards are grouped by this, in the order they first appear), `price` (a number, or text such as `"45"` or `"Free"`), `priceNote` (`"+"` or `"and up"` shows as `$45+`; anything else shows under the price), `durationMinutes`, `description`, `bookingUrl`. You can also set `"featured": true` to pin a service to the home page preview.
+Edit `data/services.json`; the pages update automatically. Fields: `name`, `category` (cards are grouped by this, in the order they first appear), `price` (a number, or text such as `"45"` or `"Free"`), `priceNote` (`"+"` or `"and up"` shows as `$45+`; anything else shows under the price), `durationMinutes`, `durationText` (optional; shown instead of the minutes, e.g. `"Varies"`), `description`, `bookingUrl`. You can also set `"featured": true` to pin a service to the home page preview.
 
 Keep prices in sync with Square: Square is what customers actually book and pay.
 

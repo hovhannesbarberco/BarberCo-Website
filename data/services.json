@@ -42,6 +42,21 @@
     "notes": ""
   },
   {
+    "name": "Men's Hair Color",
+    "category": "Color",
+    "price": "Inquire",
+    "priceNote": "",
+    "durationMinutes": 60,
+    "durationText": "Varies",
+    "description": "Men's color, from gray blending to a full new shade. Price and time depend on the work, so call (818) 397-7285 to ask.",
+    "image": "assets/img/services/mens-hair-color",
+    "squareWidgetName": "Men's Hair Color",
+    "bookingUrl": "https://app.squareup.com/appointments/buyer/widget/2xrr04gcznb9gc/LYPDVCS8S0YFS",
+    "embedCode": "<!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/2xrr04gcznb9gc/LYPDVCS8S0YFS.js'></script><!-- End Square Appointments Embed Code -->",
+    "verified": true,
+    "notes": "Square: variable price with 'Contact to inquire' shown instead of a price; books a 1 hr block. The site shows 'Inquire' and 'Varies'."
+  },
+  {
     "name": "Hot Towel Head Shave",
     "category": "Shaves & Beards",
     "price": 50,
