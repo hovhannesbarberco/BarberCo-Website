@@ -63,7 +63,10 @@
   --logo: 60px;
   --dur-fast: 0.2s;
   --dur-base: 0.3s;
-  --dur-reveal: 0.9s;
+  --dur-reveal: 0.8s;
+  /* Gentle ease-out for scroll reveals: --ease puts 64% of the motion in the
+     first fifth, which reads as a jump on a phone. This one eases in evenly. */
+  --ease-reveal: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   --z-sticky: 20;
   --z-overlay: 40;
@@ -1372,7 +1375,7 @@ button { font: inherit; }
   .js [data-reveal] {
     opacity: 0;
     transform: translateY(24px);
-    transition: opacity var(--dur-reveal) var(--ease), transform var(--dur-reveal) var(--ease);
+    transition: opacity var(--dur-reveal) var(--ease-reveal), transform var(--dur-reveal) var(--ease-reveal);
     transition-delay: var(--d, 0s);
   }
   .js [data-reveal].is-in { opacity: 1; transform: none; }

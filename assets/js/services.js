@@ -233,11 +233,10 @@
     var picks = (flagged.length ? flagged.concat(list.filter(function (s) { return !s.featured; })) : list).slice(0, count);
 
     var frag = document.createDocumentFragment();
-    picks.forEach(function (s, i) {
+    picks.forEach(function (s) {
       var parts = priceParts(s);
       var li = el("li", "menu-item");
       li.setAttribute("data-reveal", "");
-      li.style.setProperty("--d", (i % 2) * 0.08 + "s");
 
       var thumb = serviceMedia(s, "menu-item__media", "(min-width: 768px) 64px, 52px", li);
       if (thumb) li.appendChild(thumb);
@@ -265,11 +264,10 @@
 
   /* ---------- Services page: full menu ---------- */
 
-  function renderCard(s, i) {
+  function renderCard(s) {
     var parts = priceParts(s);
     var card = el("article", "card");
     card.setAttribute("data-reveal", "");
-    card.style.setProperty("--d", (i % 3) * 0.08 + "s");
 
     // Desktop/tablet: medallion panel across the top of the card.
     // Mobile: round thumbnail beside the name, price and duration.
@@ -323,7 +321,7 @@
       section.appendChild(head);
 
       var grid = el("div", "cards");
-      g.items.forEach(function (s, i) { grid.appendChild(renderCard(s, i)); });
+      g.items.forEach(function (s) { grid.appendChild(renderCard(s)); });
       section.appendChild(grid);
       frag.appendChild(section);
 

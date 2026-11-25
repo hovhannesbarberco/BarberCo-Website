@@ -95,17 +95,39 @@
     el.textContent = String(new Date().getFullYear());
   });
 
-  /* Scroll reveal (CSS only hides elements when motion is allowed and JS runs) */
+  /* Scroll reveal (CSS only hides elements when motion is allowed and JS runs).
+     An element starts sliding up as soon as its top edge is on screen, so it
+     arrives while the visitor watches instead of fading in after it is already
+     showing. Elements that come in together are staggered in page order, which
+     also works on phones where the grid is one column. */
   var observer = null;
+  function settle(el) {
+    // Done: hand the element back to its normal styles (and hover transitions).
+    el.classList.add("is-in");
+    el.removeAttribute("data-reveal");
+    el.style.removeProperty("--d");
+  }
   if ("IntersectionObserver" in window) {
     observer = new IntersectionObserver(function (entries) {
+      var n = 0;
       entries.forEach(function (entry) {
+        var el = entry.target;
         if (entry.isIntersecting) {
-          entry.target.classList.add("is-in");
-          observer.unobserve(entry.target);
+          el.style.setProperty("--d", Math.min(n++, 4) * 0.07 + "s");
+          el.addEventListener("transitionend", function end(e) {
+            if (e.target !== el || e.propertyName !== "opacity") return;
+            el.removeEventListener("transitionend", end);
+            settle(el);
+          });
+          el.classList.add("is-in");
+        } else if (entry.boundingClientRect.top < 0) {
+          settle(el); // already above the screen (e.g. after a jump link): just show it
+        } else {
+          return; // still below the screen
         }
+        observer.unobserve(el);
       });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+    }, { rootMargin: "0px 0px -5% 0px", threshold: 0 });
   }
   function reveal(scope) {
     (scope || document).querySelectorAll("[data-reveal]:not(.is-in)").forEach(function (el) {
